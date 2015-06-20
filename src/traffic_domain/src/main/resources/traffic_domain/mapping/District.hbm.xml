@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="traffic_domain.bean">
+	<class name="District" table="district">
+		<id name="id" column="id">
+            <generator class="native">
+				<param name="sequence">district_id_seq</param>
+			</generator>
+        </id>
+        <property name="name" column="name"/>
+        
+        <set name="streets" table="street_2_district">
+        	<key column="district_id"/>
+        	<many-to-many column="street_id" class="Street"/>
+        </set>        
+    </class>
+</hibernate-mapping>

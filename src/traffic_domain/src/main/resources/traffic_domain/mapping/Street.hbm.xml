@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="traffic_domain.bean">
+	<class name="Street" table="street">
+		<id name="id" column="id">
+            <generator class="native">
+				<param name="sequence">street_id_seq</param>
+			</generator>
+        </id>
+        <property name="name" column="name"/>
+               
+		<!--                  
+        The most important addition below is the inverse="true" attribute in the set element of the Street's 
+        collection mapping. What this means is that Hibernate should take the other side, the District class, 
+        when it needs to find out information about the link between the two.
+        -->
+        
+        <set name="districts" table="street_2_district" inverse="true">         
+        	<key column="street_id"/>
+        	<many-to-many column="district_id" class="District"/>
+        </set> 
+        <set name="postalCodes" table="street_2_postal_code" >
+        	<key column="street_id"/>
+        	<many-to-many column="postal_code_id" class="PostalCode"/>
+    	</set>       
+    </class>
+</hibernate-mapping>

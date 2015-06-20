@@ -1,0 +1,34 @@
+\chapter{Introduction}
+\label{cha:introduction}
+
+\section{Goals}
+\label{sec:goals}
+
+The goal of this thesis is to take a closer look at progress of knowledge engineering in the field of Semantic Web. Along with theory of Knowledge Representation (KR) \cite{HLP08} and knowledge processing methods such as Description Logic (DL) \cite{BCM03}, reasoning mechanisms and ontology modeling languages (OWL \cite{W3COWL}, RDF \cite{RDFPrimer}, RDFS \cite{RDFSchema}), the thesis shows the practical usage of the mentioned approaches in building systems driven by ontologies. 
+
+A working prototype of ontology-driven application, written in Java, has been developed within the scope of this thesis. The system main assumption is an attempt to integrate database and ontology approach, for storing and inferring desired information about domain of traffic dangers. For the needs of the system, domain model of traffic danger concept has been also designed. The ontology has been built using Protégé \cite{ProtegeHome} editor integrated with description logic reasoner. 
+
+In presented solution, ontology domain description is supported by data stored in database. Location details of traffic conditions are stored in database, while clean abstract of traffic danger domain is described by ontology. Such integration results in dynamic deduction possibility of specific facts, using DL reasoning services, instead of using only static relations defined in database. Ontology-based approach gives the meaning to the information.
+
+\newpage
+
+\section{Content}
+\label{sec:content}
+
+Chapter \ref{cha:introduction} briefly outlines the goals and contents of the thesis.
+
+\bigskip
+
+\noindent Chapter \ref{cha:theoreticalBackground} introduces the concept of Semantic Web, Knowledge Representation languages, Description Logics and reasoning mechanisms. Future goals of Semantic Web applications is shown along with explanation why it is worth to develop ontologies.
+
+\bigskip
+
+\noindent Chapter \ref{cha:trafficDangerOntology} explains the traffic danger concept. Ontology development process based on Protégé tool from Stanford Center for Biomedical Informatics Research is shown and described. Protégé and knowledge engineering approach used for ontology development is introduced.
+
+\bigskip
+
+\noindent Chapter \ref{cha:trafficDangerWebSystem} shows ontology-based reasoning system built as a proposal of knowledge processing application. The system works as a web application and integrates database approach with ontology-based approach for combining knowledge. It can dynamically infer answers for user defined questions in real time. Particular parts of the application are explained. Model-driven architecture along with agile methodology is introduced. Technologies used in building process are also briefly outlined.
+
+\bigskip
+
+\noindent Chapter \ref{cha:conclusion} shortly summarizes the work.

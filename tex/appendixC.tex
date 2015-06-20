@@ -1,0 +1,68 @@
+\setlength{\parindent}{0in}	% disable indentation
+
+\chapter{Working with sources}
+\label{cha:workingWithSources}
+
+\indent When it comes to editing sources (for reasons like extending current functionality, fixing unexpected bug, etc.), we should prepare convenient developing environment. Project is written using Eclipse IDE, and is supported by Maven (installation steps in Section \ref{sec:mavenInstallation}). For Eclipse to support Maven, we should install M2Eclipse plugin. Installation is straightforward, because it is automatic, and can be found on M2Eclipse home page \cite{M2EclipseHome}. For me, that 3 mentioned tools are synonym of convenient developing environment in the Java world.
+
+\bigskip
+
+Traffic danger application consists of 3 projects:
+\begin{itemize}
+    \setlength{\itemsep}{0cm}
+    \setlength{\parskip}{0cm}
+
+    \item \texttt{traffic\_ont} - contains logic responsible for interacting with ontologies,
+    \item \texttt{traffic\_domain} - contains logic responsible for interacting with database,
+    \item \texttt{traffic\_web} - integration part, contains web logic, and UI.
+\end{itemize}
+
+\smallskip
+
+For opening the sources, we should import that 3 projects into Eclipse workspace. When edition is complete, we can compile and install project to our local repository using Maven. What is more, complete web archive will be created, with all dependent resources and libraries. Such prepared package can be then deployed through Tomcat manager (as shown in Section \ref{sec:loadingAndConfiguration}).
+
+\bigskip
+
+Because of comprehensive configuration files and appropriate projects structure (compatible with Maven standard layout \cite{MavenStandardLayout}), installation can be accomplished in 3 steps shown below (suppose, that all projects are located in \path{C:\workspace} directory):
+
+\begin{verbatim}
+cd C:\workspace\traffic_ont\
+mvn clean install
+cd C:\workspace\traffic_domain\
+mvn clean install
+cd C:\workspace\traffic_web\
+mvn clean install
+\end{verbatim}
+
+\newpage
+
+After execution of that trivial commands, in our local Maven repository, suppose it is \path{C:\.m2\repository\}, a subdirectory  containing 3 projects will be created. Directory structure looks like that:
+
+\begin{verbatim}
+|--repository
+   |--...
+   |--agh
+      |--traffic
+         |--traffic_ont
+            |--1.0.0
+               |--traffic_ont-1.0.0.jar
+               |--...
+         |--traffic_domain
+            |--1.0.0
+               |--traffic_domain-1.0.0.jar
+               |--...
+         |--traffic_web
+            |--1.0.0
+               |--traffic_web-1.0.0.war
+               |--...
+\end{verbatim}
+
+The complete web archive \texttt{traffic\_web-1.0.0.war} is now created, and ready to be deployed on server (see Appendix \ref{cha:systemDeployment}).
+
+\bigskip
+
+Alternative way of quick loading Maven webapp project into Tomcat servlet container is available by invoking following command:
+
+\begin{verbatim}
+mvn tomcat:run
+\end{verbatim} 

@@ -1,0 +1,38 @@
+\documentclass[pdflatex,11pt,en]{aghdpl}
+
+\usepackage[english]{babel}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{fancyvrb}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage[labelsep=quad]{caption} % saparate caption and text by \quad
+\usepackage{bookmark}
+\usepackage{enumitem} % for nolistsep option
+
+\bookmarksetup{open,numbered}
+
+\input{metadata} % document metadata
+
+\begin{document}
+
+\tableofcontents
+\clearpage
+
+\appendix
+\include{appendixA}
+\include{appendixB}
+\include{appendixC}
+
+\bibliography{bibliography}
+
+\end{document}

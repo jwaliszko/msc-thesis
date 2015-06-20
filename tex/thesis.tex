@@ -1,0 +1,62 @@
+\documentclass[pdflatex,11pt,en]{aghdpl}
+\pdfoutput=1 % ensure pdflatex processing by arXiv
+
+\usepackage[english]{babel}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{amsthm}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{fancyvrb}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage[labelsep=quad]{caption} % saparate caption and text by \quad
+\usepackage{bookmark}
+\usepackage{enumitem} % for nolistsep option
+
+\addto\captionsenglish{
+  \renewcommand\listfigurename{List of figures}
+  \renewcommand\listtablename{List of tables}
+}
+
+\newtheorem{definition}{Definition}
+\lstloadlanguages{TeX}
+\bookmarksetup{open,numbered}
+
+% used for table of contents page to display all sections and subsections
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\input{metadata} % document metadata
+
+\begin{document}
+
+\titlepages
+\tableofcontents
+
+\clearpage
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+
+\appendix
+\include{appendixA}
+\include{appendixB}
+\include{appendixC}
+
+\clearpage
+\listoffigures
+\clearpage 
+\listoftables
+
+\bibliography{bibliography}
+
+\end{document}

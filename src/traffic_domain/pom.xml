@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>agh.traffic</groupId>
+  <artifactId>traffic_domain</artifactId>
+  <packaging>jar</packaging>
+  <name>traffic_domain</name>  
+  <version>1.0.0</version>
+  <developers>
+  	<developer>
+  		<id>jwa</id>
+  		<name>Jarosław Waliszko</name>
+  		<email>jaroslaw.waliszko@gmail.com</email>
+  		<roles>
+  			<role>designer</role>
+  			<role>developer</role>
+  		</roles>
+  	</developer>
+  </developers>
+  <organization>
+  	<name>AGH University of Science and Technology. Faculty of Electrical Engineering, Automatics, IT and Electronics.</name>
+  	<url>http://www.agh.edu.pl/en</url>
+  </organization>   
+  <build>         
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>                    
+                </configuration>
+            </plugin>
+        </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>3.3.2.GA</version>
+  	</dependency>
+  	<!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
+  	<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.5.11</version>
+    </dependency>
+    <!-- Hibernate gives you a choice of bytecode providers between cglib and javassist -->
+    <dependency>
+  		<groupId>jboss</groupId>
+  		<artifactId>javassist</artifactId>
+  		<version>3.7.ga</version>
+  	</dependency>
+    <dependency>
+    <groupId>postgresql</groupId>
+    	<artifactId>postgresql</artifactId>
+    	<version>8.4-701.jdbc4</version>
+	</dependency>
+  </dependencies>
+</project>

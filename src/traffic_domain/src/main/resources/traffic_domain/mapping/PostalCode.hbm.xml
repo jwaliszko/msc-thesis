@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="traffic_domain.bean">
+	<class name="PostalCode" table="postal_code">
+		<id name="id" column="id">
+            <generator class="native">
+				<param name="sequence">postal_code_id_seq</param>
+			</generator>
+        </id>
+        <property name="value" column="value"/>   
+        
+        <set name="trafficConditions" table="traffic_condition_2_postal_code">
+        	<key column="postal_code_id"/>
+        	<many-to-many column="traffic_condition_id" class="TrafficCondition"/>
+        </set>
+        <set name="streets" table="postal_code_2_street" inverse="true">
+        	<key column="postal_code_id"/>
+        	<many-to-many column="street_id" class="Street"/>
+        </set>     
+    </class>
+</hibernate-mapping>

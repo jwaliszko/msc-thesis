@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="traffic" version="2.5">
+  	<display-name>traffic_web</display-name>
+  	
+  	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/traffic_web-servlet.xml</param-value>
+	</context-param>
+	<context-param>	<!-- URI for accessing ontology file. Ontology can be loaded either from local or remote location. For remote access, change the URI to "http://sample.address.TrafficDanger.owl". -->
+    	<param-name>OntologyURI</param-name>		
+    	<param-value>file:/C:/Users/jwa/Desktop/TrafficDanger.owl</param-value>
+	</context-param>
+	
+ 	<servlet>
+		<servlet-name>traffic_web</servlet-name>
+    	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    	<load-on-startup>1</load-on-startup>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>traffic_web</servlet-name>
+    	<url-pattern>*.html</url-pattern>
+  	</servlet-mapping>
+  	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  	<listener>
+    	<listener-class>traffic_web.tools.ServletContextListenerInitializer</listener-class>
+	</listener>  	 	  	 
+</web-app>
