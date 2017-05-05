@@ -13,6 +13,6 @@ The goal is to take a closer look at progress of knowledge engineering in the fi
 
 ##### License
 
-Copyright (c) 2015 Jaroslaw Waliszko
+Copyright (c) 2015 Jarosław Waliszko
 
 Licensed MIT: http://opensource.org/licenses/MIT
